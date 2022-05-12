@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm install`
+
+This command installs a package, and any packages that it depends on. If the package has a package-lock or shrinkwrap file, the installation of dependencies will be driven by that, with an npm-shrinkwrap.json taking precedence if both files exist.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -13,6 +17,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run prettier`
+
+Runs [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) tools for identifying and reporting linting errors found in code.
+Note that Prettier has been loaded as an ESlint plugin.
+
+Use `npm run prettier-fix` for automated fix on linting errors.
+
+### `npm run storybook`
+
+Brings up Storybook, our component library explorer.
+
+Use `npm build-storybook` to build a static version of storybook.
 
 ### `npm test`
 
@@ -29,13 +46,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run prettier`
-
-Runs [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) tools for identifying and reporting linting errors found in code.
-Note that Prettier has been loaded as an ESlint plugin.
-
-Use `npm run prettier:fix` for automated fix on linting errors.
-
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
@@ -45,6 +55,12 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Tools
+
+## Prettier, Husky and
+
+## Storybook
 
 ## Learn More
 

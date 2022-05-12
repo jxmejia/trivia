@@ -9,6 +9,16 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
+    "@storybook/node-logger": "^6.4.22",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.11",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,21 +30,34 @@
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "prettier": "2.6.2",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.1"
   },
   "scripts": {
     "build": "react-scripts build",
+    "build-storybook": "build-storybook -s public",
     "eject": "react-scripts eject",
+    "prepare": "husky install",
     "prettier": "npx prettier --check .",
-    "prettier:fix": "npx prettier --write .",
+    "prettier-fix": "npx prettier --write .",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "prepare": "husky install"
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "lint-staged": {
