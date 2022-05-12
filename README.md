@@ -46,6 +46,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+Use [Source map explorer](https://www.npmjs.com/package/source-map-explorer) to analyze JavaScript bundles using the source maps. It shows you a treemap visualization to help you debug where all the code is coming from:
+
+```
+npm run build
+npm run analyze
+```
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
