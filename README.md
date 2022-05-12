@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Trivia
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -28,6 +28,13 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run prettier`
+
+Runs [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) tools for identifying and reporting linting errors found in code.
+Note that Prettier has been loaded as an ESlint plugin.
+
+Use `npm run prettier:fix` for automated fix on linting errors.
 
 ### `npm run eject`
 
