@@ -8,13 +8,11 @@ export const transformToQuestions = (data: any): Question[] => {
     category: element.category,
     type: element.type,
     difficulty: element.difficulty,
-    description: element.question, // TOOD String.fromCharCode(parseInt(unicode,16))
+    description: element.question, // TODO: transform into natural text
     correctAnswer: isTrue(element.correct_answer),
     incorrectAnswers: element.incorrect_answers.map(isTrue),
   });
-  const aja = data?.filter(isBooleanType).map(mapToQuestion) || [];
-  console.log(aja);
-  return aja;
+  return data?.filter(isBooleanType).map(mapToQuestion) || [];
 };
 
 export const isCorrectAnswer = ({ correctAnswer, answer }: Question) => correctAnswer === answer;
