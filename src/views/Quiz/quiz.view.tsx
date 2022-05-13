@@ -5,7 +5,7 @@ import { QuestionsContext } from "../../context";
 import { Question } from "../../types";
 import { ButtonsContainer, CardContainer, TextContainer, TitleContainer } from "./quiz.style";
 
-function Quiz() {
+const Quiz = () => {
   const navigate = useNavigate();
   const { questions, setQuestions } = useContext(QuestionsContext);
   const question = questions?.find(({ answer }) => answer === undefined);
@@ -55,6 +55,6 @@ function Quiz() {
       </ButtonsContainer>
     </Layout>
   );
-}
+};
 
 export default memo(Quiz);

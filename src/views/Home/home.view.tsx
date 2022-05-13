@@ -4,7 +4,7 @@ import { Button, Layout, Text, Title } from "../../components";
 import { QuestionsContext } from "../../context";
 import { ButtonContainer, TextContainer, TitleContainer } from "./home.style";
 
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
   const { questions, getQuestions } = useContext(QuestionsContext);
 
@@ -34,6 +34,6 @@ function Home() {
       </ButtonContainer>
     </Layout>
   );
-}
+};
 
 export default memo(Home);
