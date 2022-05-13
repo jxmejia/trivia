@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { questionsMock } from "../../mocks";
-import { Question } from "../../models";
+import { Question } from "../../types";
 import { transformToQuestion } from "../../utils";
 import { QuestionsContextProviderProps, QuestionsContextState } from "./questions.definition";
 

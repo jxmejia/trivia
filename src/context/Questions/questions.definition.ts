@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode, SetStateAction } from "react";
-import { Question } from "../../models";
+import { Question } from "../../types";
 
 export type QuestionsContextState = {
   questions?: Question[];
