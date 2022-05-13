@@ -2,7 +2,7 @@ import { memo } from "react";
 import type { ButtonProps } from "./button.definition";
 import { StyledButton } from "./button.style";
 
-export const Button = ({ children, onClick }: ButtonProps) => {
+const Button = ({ children, onClick }: ButtonProps) => {
   return (
     <StyledButton type="button" onClick={onClick}>
       {children}

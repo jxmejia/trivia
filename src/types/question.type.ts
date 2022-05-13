@@ -1,4 +1,4 @@
-type Category =
+export type Category =
   | "Entertainment: Music"
   | "Entertainment: Japanese Anime & Manga"
   | "History"
@@ -7,7 +7,7 @@ type Category =
   | "Science & Nature"
   | "Vehicles";
 
-type Type = "boolean";
+export type Type = "boolean";
 
 export type Question = {
   index: number;

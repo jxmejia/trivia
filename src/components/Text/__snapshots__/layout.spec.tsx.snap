@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text is renders component 1`] = `
+.emotion-0 {
+  font-size: 14px;
+}
+
+<div>
+  <span
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`Text renders component 1`] = `
+.emotion-0 {
+  font-size: 14px;
+}
+
+<div>
+  <span
+    class="emotion-0"
+  />
+</div>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title is renders component 1`] = `
+.emotion-0 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`Title renders component 1`] = `
+.emotion-0 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;

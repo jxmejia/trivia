@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { questionsMock } from "../../mocks";
 import { Question } from "../../types";
-import { transformToQuestion } from "../../utils";
+import { transformToQuestions } from "../../utils";
 import { QuestionsContextProviderProps, QuestionsContextState } from "./questions.definition";
 
 export const QuestionsContext = createContext<QuestionsContextState>({});
@@ -20,7 +20,7 @@ export const QuestionsContextProvider = ({ children }: QuestionsContextProviderP
     } catch (error) {
       console.error(error);
     } finally {
-      const questions = transformToQuestion(jsonResponse?.results || questionsMock);
+      const questions = transformToQuestions(jsonResponse?.results || questionsMock);
       setQuestions(questions);
     }
   };

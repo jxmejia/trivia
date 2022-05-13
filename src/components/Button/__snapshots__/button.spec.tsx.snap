@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button is renders component 1`] = `
+.emotion-0 {
+  font-size: 14px;
+}
+
+<div>
+  <button
+    class="emotion-0"
+    type="button"
+  />
+</div>
+`;
+
+exports[`Button renders component 1`] = `
+.emotion-0 {
+  font-size: 14px;
+}
+
+<div>
+  <button
+    class="emotion-0"
+    type="button"
+  />
+</div>
+`;
