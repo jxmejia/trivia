@@ -4,7 +4,7 @@ export const transformToQuestion = (data: any): Question[] => {
   const isBooleanType = (element: any) => element.type === "boolean";
   const isTrue = (element: string) => !!(element === "True");
   const mapToQuestion = (element: any, index: number) => ({
-    index,
+    index: index + 1,
     category: element.category,
     type: element.type,
     difficulty: element.difficulty,
@@ -17,4 +17,4 @@ export const transformToQuestion = (data: any): Question[] => {
 
 export const isCorrectAnswer = ({ correctAnswer, answer }: Question) => correctAnswer === answer;
 
-export const getCorrectAnswersTotal = (questions: Question[]) => questions.filter(isCorrectAnswer).length;
+export const getCorrectAnswersTotal = (questions: Question[] = []) => questions.filter(isCorrectAnswer).length;
