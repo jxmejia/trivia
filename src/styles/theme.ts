@@ -1,6 +1,4 @@
-import { Theme } from "@emotion/react";
-
-const theme: Theme = {
+const theme = {
   colors: {
     alto: "#e0e0e0",
     black: "#000000",
