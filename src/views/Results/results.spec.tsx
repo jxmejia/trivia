@@ -2,14 +2,14 @@ import { createSerializer } from "@emotion/jest";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { QuestionsContext } from "../../context";
-import { questionsMock } from "../../mocks";
+import { mockQuestions } from "../../mocks";
 import { toQuestions } from "../../utils";
 import Results from "./results.view";
 
 expect.addSnapshotSerializer(createSerializer());
 
 const contextMock = {
-  questions: toQuestions(questionsMock),
+  questions: toQuestions(mockQuestions),
   getQuestions: jest.fn(),
   setQuestions: jest.fn(),
 };

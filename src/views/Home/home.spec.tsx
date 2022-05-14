@@ -2,21 +2,21 @@ import { createSerializer } from "@emotion/jest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { QuestionsContext } from "../../context";
-import { questionsMock } from "../../mocks";
+import { mockQuestions } from "../../mocks";
 import { toQuestions } from "../../utils";
 import Home from "./home.view";
 
 expect.addSnapshotSerializer(createSerializer());
 
-const contextMock = {
-  questions: toQuestions(questionsMock),
+const mockContext = {
+  questions: toQuestions(mockQuestions),
   getQuestions: jest.fn(),
   setQuestions: jest.fn(),
 };
 
 const customRender = () =>
   render(
-    <QuestionsContext.Provider value={contextMock}>
+    <QuestionsContext.Provider value={mockContext}>
       <BrowserRouter>
         <Home />
       </BrowserRouter>
@@ -31,9 +31,9 @@ it("renders component", () => {
   expect(screen.getByText("Begin")).toBeVisible();
 });
 
-it("redirects to quiz", () => {
+it("gets the questions", () => {
   customRender();
   const button = screen.getByText("Begin");
   fireEvent.click(button);
-  expect(contextMock.getQuestions).toBeCalledTimes(1);
+  expect(mockContext.getQuestions).toBeCalledTimes(1);
 });

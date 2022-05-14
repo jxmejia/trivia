@@ -1,42 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders component 1`] = `
+.emotion-0 {
+  text-align: center;
+}
+
+.emotion-1 {
+  margin: 50px;
+}
+
+.emotion-2 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.emotion-3 {
+  margin: 25px;
+}
+
+.emotion-4 {
+  font-size: 14px;
+}
+
 <div>
   <div
-    class="css-1yltisf"
+    class="emotion-0"
   >
     <div
-      class="css-1ap9q9n"
+      class="emotion-1"
     >
       <div
-        class="css-1jbfuhw"
+        class="emotion-2"
       >
         Welcome to the trivia challenge
       </div>
     </div>
     <div
-      class="css-6hzeg0"
+      class="emotion-3"
     >
       <div>
         <span
-          class="css-mr3j8u"
+          class="emotion-4"
         >
           You will be presented with 10 True or False questions.
         </span>
       </div>
       <div>
         <span
-          class="css-mr3j8u"
+          class="emotion-4"
         >
           Can you score 100%?
         </span>
       </div>
     </div>
     <div
-      class="css-6hzeg0"
+      class="emotion-3"
     >
       <button
-        class="css-mr3j8u"
+        class="emotion-4"
         type="button"
       >
         Begin

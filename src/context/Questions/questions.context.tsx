@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { questionsMock } from "../../mocks";
+import { mockQuestions } from "../../mocks";
 import { QuestionsData, Question } from "../../types";
 import { toQuestions } from "../../utils";
 import { QuestionsContextProviderProps, QuestionsContextState } from "./questions.definition";
@@ -22,7 +22,7 @@ export const QuestionsContextProvider = ({ children }: QuestionsContextProviderP
     } catch (error) {
       throw error;
     } finally {
-      const questions = toQuestions((jsonResponse?.results as QuestionsData[]) || questionsMock);
+      const questions = toQuestions((jsonResponse?.results as QuestionsData[]) || mockQuestions);
       setQuestions(questions);
     }
   };
