@@ -25,3 +25,16 @@ exports[`Button renders component 1`] = `
   />
 </div>
 `;
+
+exports[`renders component 1`] = `
+.emotion-0 {
+  font-size: 14px;
+}
+
+<div>
+  <button
+    class="emotion-0"
+    type="button"
+  />
+</div>
+`;

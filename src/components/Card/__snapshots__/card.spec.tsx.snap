@@ -27,3 +27,17 @@ exports[`Card renders component 1`] = `
   />
 </div>
 `;
+
+exports[`renders component 1`] = `
+.emotion-0 {
+  border: 1px solid #000000;
+  padding: 10px;
+  text-align: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;

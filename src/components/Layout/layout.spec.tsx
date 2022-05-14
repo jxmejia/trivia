@@ -4,9 +4,7 @@ import Layout from "./layout.component";
 
 expect.addSnapshotSerializer(createSerializer());
 
-describe("Layout", () => {
-  it("renders component", () => {
-    const { container } = render(<Layout />);
-    expect(container).toMatchSnapshot();
-  });
+it("renders component", () => {
+  const { container } = render(<Layout />);
+  expect(container).toMatchSnapshot();
 });

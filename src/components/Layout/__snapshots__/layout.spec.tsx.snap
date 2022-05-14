@@ -23,3 +23,15 @@ exports[`Layout renders component 1`] = `
   />
 </div>
 `;
+
+exports[`renders component 1`] = `
+.emotion-0 {
+  text-align: center;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;

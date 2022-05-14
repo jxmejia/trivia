@@ -4,9 +4,7 @@ import Card from "./card.component";
 
 expect.addSnapshotSerializer(createSerializer());
 
-describe("Card", () => {
-  it("renders component", () => {
-    const { container } = render(<Card />);
-    expect(container).toMatchSnapshot();
-  });
+it("renders component", () => {
+  const { container } = render(<Card />);
+  expect(container).toMatchSnapshot();
 });

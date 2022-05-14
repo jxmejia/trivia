@@ -4,9 +4,7 @@ import Title from "./title.component";
 
 expect.addSnapshotSerializer(createSerializer());
 
-describe("Title", () => {
-  it("renders component", () => {
-    const { container } = render(<Title />);
-    expect(container).toMatchSnapshot();
-  });
+it("renders component", () => {
+  const { container } = render(<Title />);
+  expect(container).toMatchSnapshot();
 });
