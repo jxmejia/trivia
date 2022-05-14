@@ -1,10 +1,10 @@
 import { createSerializer } from "@emotion/jest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { QuestionsContext } from "../../context";
 import { questionsMock } from "../../mocks";
 import { toQuestions } from "../../utils";
-import Home from "./home.view";
+import Results from "./results.view";
 
 expect.addSnapshotSerializer(createSerializer());
 
@@ -18,22 +18,13 @@ const customRender = () =>
   render(
     <QuestionsContext.Provider value={contextMock}>
       <BrowserRouter>
-        <Home />
+        <Results />
       </BrowserRouter>
     </QuestionsContext.Provider>,
   );
 
 it("renders component", () => {
   customRender();
-  expect(screen.getByText("Welcome to the trivia challenge")).toBeVisible();
-  expect(screen.getByText("You will be presented with 10 True or False questions.")).toBeVisible();
-  expect(screen.getByText("Can you score 100%?")).toBeVisible();
-  expect(screen.getByText("Begin")).toBeVisible();
-});
-
-it("redirects to quiz", () => {
-  customRender();
-  const button = screen.getByText("Begin");
-  fireEvent.click(button);
-  expect(contextMock.getQuestions).toBeCalledTimes(1);
+  expect(screen.getByText("You scored 0 / 10")).toBeVisible();
+  expect(screen.getByText("Play again")).toBeVisible();
 });

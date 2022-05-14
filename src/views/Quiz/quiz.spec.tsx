@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { QuestionsContext } from "../../context";
 import { questionsMock } from "../../mocks";
 import { toQuestions } from "../../utils";
-import Home from "./home.view";
+import Quiz from "./quiz.view";
 
 expect.addSnapshotSerializer(createSerializer());
 
@@ -18,22 +18,33 @@ const customRender = () =>
   render(
     <QuestionsContext.Provider value={contextMock}>
       <BrowserRouter>
-        <Home />
+        <Quiz />
       </BrowserRouter>
     </QuestionsContext.Provider>,
   );
 
 it("renders component", () => {
   customRender();
-  expect(screen.getByText("Welcome to the trivia challenge")).toBeVisible();
-  expect(screen.getByText("You will be presented with 10 True or False questions.")).toBeVisible();
-  expect(screen.getByText("Can you score 100%?")).toBeVisible();
-  expect(screen.getByText("Begin")).toBeVisible();
+  expect(screen.getByText("Vehicles")).toBeVisible();
+  expect(
+    screen.getByText(
+      "In 1993 Swedish car manufacturer Saab experimented with replacing the steering wheel with a joystick in a Saab 9000.",
+    ),
+  ).toBeVisible();
+  expect(screen.getByText("True")).toBeVisible();
+  expect(screen.getByText("False")).toBeVisible();
 });
 
-it("redirects to quiz", () => {
+it("answers false", () => {
   customRender();
-  const button = screen.getByText("Begin");
+  const button = screen.getByText("False");
   fireEvent.click(button);
-  expect(contextMock.getQuestions).toBeCalledTimes(1);
+  expect(contextMock.questions[0].answer).toBeFalsy;
+});
+
+it("answers true", () => {
+  customRender();
+  const button = screen.getByText("True");
+  fireEvent.click(button);
+  expect(contextMock.questions[0].answer).toBeTruthy;
 });
