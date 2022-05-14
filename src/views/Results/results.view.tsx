@@ -5,7 +5,7 @@ import { QuestionsContext } from "../../context";
 import { getCorrectAnswersTotal, isCorrectAnswer } from "../../utils";
 import { TitleContainer, TextContainer, ButtonContainer } from "./results.style";
 
-export const Results = () => {
+const Results = () => {
   const navigate = useNavigate();
   const { questions, setQuestions } = useContext(QuestionsContext);
 
@@ -13,11 +13,10 @@ export const Results = () => {
     if (!questions?.length) {
       navigate("/");
     }
-  }, [questions]);
+  }, [questions, navigate]);
 
   const handleClick = () => setQuestions?.([]);
 
-  // Better icons ?
   return (
     <Layout>
       <TitleContainer>
@@ -27,7 +26,7 @@ export const Results = () => {
       </TitleContainer>
       <TextContainer>
         {questions?.map((question) => (
-          <div>
+          <div key={question.index}>
             <Text>{isCorrectAnswer(question) ? "+" : "-"}</Text>
             <Text>{question.description}</Text>
           </div>

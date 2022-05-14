@@ -1,6 +1,8 @@
 # Trivia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[G2i React Web Test - March 2021 Version](https://public.3.basecamp.com/p/a9VLMKqmcL2hD19Be6UWym2b)
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 
 ## Available Scripts
 
@@ -18,18 +20,22 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm run prettier`
+### `npm run lint`
 
 Runs [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) tools for identifying and reporting linting errors found in code.
 Note that Prettier has been loaded as an ESlint plugin.
 
-Use `npm run prettier-fix` for automated fix on linting errors.
+Use `npm run lint --fix` for automated fix on linting errors.
 
 ### `npm run storybook`
 
 Brings up Storybook, our component library explorer.
 
 Use `npm build-storybook` to build a static version of storybook.
+
+### `npm run prepare`
+
+Configures git hook `pre-commit` via [Husky](https://www.npmjs.com/package/husky) and [lint-staged](https://www.npmjs.com/package/lint-staged)
 
 ### `npm test`
 
@@ -46,13 +52,6 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Use [Source map explorer](https://www.npmjs.com/package/source-map-explorer) to analyze JavaScript bundles using the source maps. It shows you a treemap visualization to help you debug where all the code is coming from:
-
-```
-npm run build
-npm run analyze
-```
-
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
@@ -62,12 +61,6 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Tools
-
-## Prettier, Husky and
-
-## Storybook
 
 ## Learn More
 

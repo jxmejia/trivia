@@ -1,10 +1,10 @@
 import { Global } from "@emotion/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import globalStyles from "./styles/global";
 import { QuestionsContextProvider } from "./context";
+import globalStyles from "./styles/global";
 import { Home, Quiz, Results } from "./views";
 
-function App() {
+function App(): JSX.Element {
   // TODO: Add error boundary https://www.npmjs.com/package/react-error-boundary
   return (
     <>

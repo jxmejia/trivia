@@ -16,7 +16,7 @@ const Quiz = () => {
     } else if (!question) {
       navigate("/results");
     }
-  }, [questions, question]);
+  }, [questions, question, navigate]);
 
   const updateAnswers = (answer: boolean) => {
     const answeredQuestions = questions?.map((element: Question) => ({

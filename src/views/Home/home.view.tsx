@@ -12,7 +12,7 @@ const Home = () => {
     if (questions?.length) {
       navigate("/quiz");
     }
-  }, [questions, getQuestions]);
+  }, [questions, navigate]);
 
   const handleClick = () => getQuestions?.();
 

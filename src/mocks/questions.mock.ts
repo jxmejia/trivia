@@ -1,4 +1,6 @@
-export const questionsMock = [
+import { QuestionsData } from "../types";
+
+export const questionsMock: QuestionsData[] = [
   {
     category: "Vehicles",
     type: "boolean",

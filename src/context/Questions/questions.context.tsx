@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { questionsMock } from "../../mocks";
-import { Question } from "../../types";
-import { transformToQuestions } from "../../utils";
+import { QuestionsData, Question } from "../../types";
+import { toQuestions } from "../../utils";
 import { QuestionsContextProviderProps, QuestionsContextState } from "./questions.definition";
 
 export const QuestionsContext = createContext<QuestionsContextState>({});
@@ -16,11 +16,13 @@ export const QuestionsContextProvider = ({ children }: QuestionsContextProviderP
       const response = await fetch(process.env.REACT_APP_QUESTIONS_API_URL || "");
       if (response.status === 200) {
         jsonResponse = await response.json();
+      } else {
+        throw new Error(`Response status failed: status ${response.status}`);
       }
     } catch (error) {
-      console.error(error);
+      throw error;
     } finally {
-      const questions = transformToQuestions(jsonResponse?.results || questionsMock);
+      const questions = toQuestions((jsonResponse?.results as QuestionsData[]) || questionsMock);
       setQuestions(questions);
     }
   };
