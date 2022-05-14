@@ -14,7 +14,9 @@ const Home = () => {
     }
   }, [questions, navigate]);
 
-  const handleClick = () => getQuestions?.();
+  const handleClick = () => {
+    getQuestions?.();
+  };
 
   return (
     <Layout>
