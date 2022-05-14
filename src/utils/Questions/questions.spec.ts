@@ -1,5 +1,5 @@
-import { Category, Type } from "../../types";
-import { getCorrectAnswersTotal, isCorrectAnswer, transformToQuestions } from "./questions.util";
+import { Category, QuestionType } from "../../types";
+import { getCorrectAnswersTotal, isCorrectAnswer, toQuestions } from "./questions.util";
 
 describe("transformToQuestion", () => {
   const data = {
@@ -13,22 +13,22 @@ describe("transformToQuestion", () => {
   };
 
   it("returns an empty array when no data", () => {
-    expect(transformToQuestions(undefined).length).toBe(0);
+    expect(toQuestions([]).length).toBe(0);
   });
 
   it("returns an empty array when question type is not boolean", () => {
-    expect(transformToQuestions([{ ...data, type: undefined }]).length).toBe(0);
+    expect(toQuestions([{ ...data, type: undefined }]).length).toBe(0);
   });
 
   it("returns questions", () => {
-    const [question] = transformToQuestions([data]);
+    const [question] = toQuestions([data]);
     expect(question.index).toBe(data.index);
     expect(question.category).toBe(data.category);
     expect(question.type).toBe(data.type);
     expect(question.difficulty).toBe(data.difficulty);
     expect(question.description).toBe(data.question);
     expect(question.correctAnswer).toBe(true);
-    expect(question.incorrectAnswers[0]).toBe(false);
+    expect(question.incorrectAnswers?.[0]).toBe(false);
   });
 });
 
@@ -36,7 +36,7 @@ describe("isCorrectAnswer", () => {
   const question = {
     index: 1,
     category: "Vehicles" as Category,
-    type: "boolean" as Type,
+    type: "boolean" as QuestionType,
     difficulty: "hard",
     description: "In 1993 Swedish car manufacturer Saab...",
     correctAnswer: true,
@@ -59,7 +59,7 @@ describe("getCorrectAnswersTotal", () => {
     {
       index: 1,
       category: "Vehicles" as Category,
-      type: "boolean" as Type,
+      type: "boolean" as QuestionType,
       difficulty: "hard",
       description: "In 1993 Swedish car manufacturer Saab...",
       correctAnswer: true,

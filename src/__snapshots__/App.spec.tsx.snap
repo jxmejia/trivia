@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component 1`] = `
+<div>
+  <div
+    class="css-1yltisf"
+  >
+    <div
+      class="css-1ap9q9n"
+    >
+      <div
+        class="css-1jbfuhw"
+      >
+        Welcome to the trivia challenge
+      </div>
+    </div>
+    <div
+      class="css-6hzeg0"
+    >
+      <div>
+        <span
+          class="css-mr3j8u"
+        >
+          You will be presented with 10 True or False questions.
+        </span>
+      </div>
+      <div>
+        <span
+          class="css-mr3j8u"
+        >
+          Can you score 100%?
+        </span>
+      </div>
+    </div>
+    <div
+      class="css-6hzeg0"
+    >
+      <button
+        class="css-mr3j8u"
+        type="button"
+      >
+        Begin
+      </button>
+    </div>
+  </div>
+</div>
+`;
