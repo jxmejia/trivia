@@ -5,7 +5,7 @@ import globalStyles from "./styles/global";
 import { Home, Quiz, Results } from "./views";
 
 function App(): JSX.Element {
-  // TODO: Add error boundary https://www.npmjs.com/package/react-error-boundary
+  // TODO: Add error boundary https://www.npmjs.com/package/react-error-boundary?
   return (
     <>
       <Global styles={globalStyles} />

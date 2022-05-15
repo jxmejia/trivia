@@ -17,10 +17,12 @@ export const QuestionsContextProvider = ({ children }: QuestionsContextProviderP
       if (response.status === 200) {
         jsonResponse = await response.json();
       } else {
-        throw new Error(`Response status failed: status ${response.status}`);
+        // TODO: use throw / error boundary?
+        console.error(`Response status failed: status ${response}`);
       }
     } catch (error) {
-      throw error;
+      // TODO: use throw / error boundary?
+      console.error(error);
     } finally {
       const questions = toQuestions((jsonResponse?.results as QuestionsData[]) || mockQuestions);
       setQuestions(questions);
