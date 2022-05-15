@@ -2,20 +2,22 @@ import { memo, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Layout, Text, Title } from "../../components";
 import { QuestionsContext } from "../../context";
-import { getCorrectAnswersTotal, isCorrectAnswer } from "../../utils";
+import { getCorrectAnswersTotal, hasAnswers, isCorrectAnswer } from "../../utils";
 import { TitleContainer, TextContainer, ButtonContainer } from "./results.style";
 
 const Results = () => {
   const navigate = useNavigate();
-  const { questions, setQuestions } = useContext(QuestionsContext);
+  const { questions, getQuestions } = useContext(QuestionsContext);
 
   useEffect(() => {
     if (!questions?.length) {
       navigate("/");
+    } else if (!hasAnswers(questions)) {
+      navigate("/quiz");
     }
   }, [questions, navigate]);
 
-  const handleClick = () => setQuestions?.([]);
+  const handleClick = () => getQuestions?.();
 
   return (
     <Layout>

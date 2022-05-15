@@ -1,5 +1,15 @@
 import { Category, QuestionType } from "../../types";
-import { getCorrectAnswersTotal, isCorrectAnswer, toQuestions } from "./questions.util";
+import { getCorrectAnswersTotal, hasAnswers, isCorrectAnswer, toQuestions } from "./questions.util";
+
+const question = {
+  index: 1,
+  category: "Vehicles" as Category,
+  type: "boolean" as QuestionType,
+  difficulty: "hard",
+  description: "In 1993 Swedish car manufacturer Saab...",
+  correctAnswer: true,
+  incorrectAnswers: [false],
+};
 
 describe("transformToQuestion", () => {
   const data = {
@@ -33,16 +43,6 @@ describe("transformToQuestion", () => {
 });
 
 describe("isCorrectAnswer", () => {
-  const question = {
-    index: 1,
-    category: "Vehicles" as Category,
-    type: "boolean" as QuestionType,
-    difficulty: "hard",
-    description: "In 1993 Swedish car manufacturer Saab...",
-    correctAnswer: true,
-    incorrectAnswers: [false],
-  };
-
   it("returns true", () => {
     expect(isCorrectAnswer({ ...question, answer: true })).toBeTruthy;
     expect(isCorrectAnswer({ ...question, correctAnswer: false, answer: false })).toBeTruthy;
@@ -55,20 +55,22 @@ describe("isCorrectAnswer", () => {
 });
 
 describe("getCorrectAnswersTotal", () => {
-  const questions = [
-    {
-      index: 1,
-      category: "Vehicles" as Category,
-      type: "boolean" as QuestionType,
-      difficulty: "hard",
-      description: "In 1993 Swedish car manufacturer Saab...",
-      correctAnswer: true,
-      incorrectAnswers: [false],
-      answer: true,
-    },
-  ];
+  it("returns 0", () => {
+    expect(getCorrectAnswersTotal([{ ...question, answer: false }])).toBe(0);
+  });
 
   it("returns 1", () => {
-    expect(getCorrectAnswersTotal(questions)).toBe(1);
+    expect(getCorrectAnswersTotal([{ ...question, answer: true }])).toBe(1);
+  });
+});
+
+describe("hasAnswers", () => {
+  it("returns false", () => {
+    expect(hasAnswers([{ ...question, answer: false }])).toBeFalsy;
+    expect(hasAnswers([{ ...question, answer: true }])).toBeFalsy;
+  });
+
+  it("returns true", () => {
+    expect(hasAnswers([{ ...question, answer: undefined }])).toBeTruthy;
   });
 });

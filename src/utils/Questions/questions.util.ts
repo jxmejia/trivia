@@ -18,3 +18,5 @@ export const toQuestions = (data: QuestionsData[]): Question[] => {
 export const isCorrectAnswer = ({ correctAnswer, answer }: Question): boolean => correctAnswer === answer;
 
 export const getCorrectAnswersTotal = (questions: Question[] = []): number => questions.filter(isCorrectAnswer).length;
+
+export const hasAnswers = (questions: Question[]): boolean => questions.every(({ answer }) => answer !== undefined);
