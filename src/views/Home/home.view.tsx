@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <Layout>
       <TitleContainer>
-        <Title>Welcome to the trivia challenge</Title>
+        <Title>Welcome to the Trivia Challenge!</Title>
       </TitleContainer>
       <TextContainer>
         <div>

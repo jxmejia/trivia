@@ -25,7 +25,7 @@ const customRender = () =>
 
 it("renders component", () => {
   customRender();
-  expect(screen.getByText("Welcome to the trivia challenge")).toBeVisible();
+  expect(screen.getByText("Welcome to the Trivia Challenge!")).toBeVisible();
   expect(screen.getByText("You will be presented with 10 True or False questions.")).toBeVisible();
   expect(screen.getByText("Can you score 100%?")).toBeVisible();
   expect(screen.getByText("Begin")).toBeVisible();

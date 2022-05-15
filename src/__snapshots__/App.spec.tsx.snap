@@ -22,6 +22,11 @@ exports[`renders component 1`] = `
   font-size: 14px;
 }
 
+.emotion-7 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
 <div>
   <div
     class="emotion-0"
@@ -32,7 +37,7 @@ exports[`renders component 1`] = `
       <div
         class="emotion-2"
       >
-        Welcome to the trivia challenge
+        Welcome to the Trivia Challenge!
       </div>
     </div>
     <div
@@ -57,7 +62,7 @@ exports[`renders component 1`] = `
       class="emotion-3"
     >
       <button
-        class="emotion-4"
+        class="emotion-7"
         type="button"
       >
         Begin

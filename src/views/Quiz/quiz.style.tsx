@@ -5,7 +5,8 @@ export const TitleContainer = styled.div`
 `;
 
 export const CardContainer = styled.div`
-  margin: 25px;
+  margin: auto;
+  width: 50%;
 `;
 
 export const TextContainer = styled.div`
